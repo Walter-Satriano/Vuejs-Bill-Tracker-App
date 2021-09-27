@@ -1,6 +1,6 @@
 <template>
   <main>
-    <AddCategory v-if="shouldShowAddCategory" v-on="addCategory" />
+    <AddCategory v-if="shouldShowAddCategory" v-on:addCategory="addCategory" />
     <div v-else>
       <NavBar />
       <div class="container flex">
