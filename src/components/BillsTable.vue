@@ -8,12 +8,29 @@
         <th scope="col"></th>
       </tr>
     </thead>
-    <tbody>date
-      <tr vamount-for="(bidatell, index) in bills" :key="index" class="p-4">
-        <td>{{ bill.date }}</td>
-        <td>{{ bill.amount }} €</td>
+    <tbody>
+      <tr class="p-4 bg-blue-200 text-center">
+        <td colspan="4">
+          <button class="underline" @click="triggerShowAddBill">Add New</button>
+        </td>
+      </tr>
+      <tr v-for="(bill, index) in bills" :key="index" class="p-4">
+        <td>{{ bill.date | moment("MMM D YYYY")}}</td>
+        <td>€ {{ bill.amount }}</td>
         <td>{{ bill.category }}</td>
       </tr>
     </tbody>
   </table>
 </template>
+
+<script>
+  export default {
+    name: 'BillsTable',
+    methods: {
+      triggerShowAddBill: function() {
+        this.$emit('triggerShowAddBill')
+      }
+    },
+    props: ['bills']
+  }
+</script>
