@@ -58,8 +58,38 @@
     return monthsWithValues
   }
 
+
+  /* The component extends the Bar component we imported from vue-chartjs at the beginning of this lesson,
+  and this is why there is no template part in this component: everything is handled for us. 
+  We just need to call the renderChart method of the Bar component. We do so in the mounted and in the bills watcher,
+  so the chart is re-rendered when the component mounts, and when the bills change.
+  We abstract that in the displayChart method. We pass in the labels, using the last12Months() function we defined above,
+  and also the months’ data, using processBills(). */
+  
   export default {
     extends: Bar,
-
+    props: ['bills'],
+    methods: {
+      displayChart: function () {
+        this.renderChart({
+          labels: last12Months(),
+          datasets: [
+            {
+              label: 'Amount',
+              backgroundColor: 'lightblue',
+              data: processBills(this.bills),
+            },
+          ],
+        })
+      },
+    },
+    mounted: function () {
+      this.displayChart()
+    },
+    watch: {
+      bills: function () {
+        this.displayChart()
+      },
+    },
   }
 </script>
