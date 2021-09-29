@@ -80,7 +80,7 @@
               data: processBills(this.bills),
             },
           ],
-        })
+        }, {responsive: true, maintainAspectRatio: true})
       },
     },
     mounted: function () {
