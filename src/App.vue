@@ -47,7 +47,8 @@ export default {
       bills: [],
       categories: [],
       shouldShowAddCategory: false,
-      shouldShowAddBill: false
+      shouldShowAddBill: false,
+      activeCategory: '',
     };
   },
   methods: {
@@ -91,6 +92,15 @@ export default {
     if (!this.bills.length && !this.categories.length) {
       this.shouldShowAddCategory = true;
     }
+  },
+  computed: {
+    activeBills() {
+      return this.bills
+        .filter((bill) =>
+          this.activeCategory? bill.category===this.activeCategory:true
+        )
+        .sort((a, b) => (new Date(a.date) < new Date(b.date) ? 1 : -1))
+    },
   }
 };
 </script>
