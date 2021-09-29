@@ -8,13 +8,13 @@
         <div class="container flex">
           <div class="w-1/2">
             <BillsTable 
-              :bills="bills"
+              :bills="activeBills"
               v-on:triggerShowAddBill="triggerShowAddBill"
               v-on:removeBill="removeBill"
             />
           </div>
           <div class="w-1/2">
-            <Chart :bills="bills"/>
+            <Chart :bills="activeBills"/>
           </div>
         </div>
       </div>
