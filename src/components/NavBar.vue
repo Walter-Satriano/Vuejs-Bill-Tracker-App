@@ -1,5 +1,5 @@
 <template>
-  <ul class="list-reset inline flex justify-center border-b-4 mb-0">
+  <ul class="list-reset sm:flex sm:flex-wrap justify-center mb-8 sm:py-4 lg:mb-12">
 
     <li
       class="top_menu_items"
@@ -39,6 +39,6 @@ export default {
 
 <style lang="postcss" scoped>
 .top_menu_items {
-  @apply  p-4 inline hover:bg-gray-400 uppercase font-black cursor-pointer font-mono text-3xl;
+  @apply  p-2 hover:bg-gray-400 uppercase font-black cursor-pointer font-mono text-base sm:text-2xl lg:text-4xl;
 }
 </style>
