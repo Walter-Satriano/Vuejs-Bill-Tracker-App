@@ -111,7 +111,7 @@ export default {
     activeBills() {
       return this.bills
         .filter((bill) =>
-          this.activeCategory? bill.category===this.activeCategory:true
+          this.activeCategory ? bill.category === this.activeCategory : true
         )
         .sort((a, b) => (new Date(a.date) < new Date(b.date) ? 1 : -1))
     },
