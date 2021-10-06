@@ -1,6 +1,6 @@
 <template>
-  <div class="mb-8 lg:mb-0">
-    <table class="table mx-auto w-5/6 text-sm sm:text-base">
+  <div class="mb-8 lg:mb-0 font-sans">
+    <table class="table mx-auto w-5/6 text-base sm:text-lg">
       <thead class="bg-blue-400 text-white">
         <tr>
           <th scope="col">Date</th>
@@ -22,10 +22,7 @@
       </tbody>
     </table>
 
-    <button class="rounded-full py-2 px-4 mt-4 bg-blue-400 text-white text-center font-bold"
-      @click="triggerShowAddBill">
-      Add New Bill
-    </button>
+    <button class="add-bill-btn" @click="triggerShowAddBill">Add New Bill</button>
   </div>
 </template>
 
@@ -54,7 +51,12 @@
     @apply py-1
   }
 
+  .add-bill-btn {
+    @apply rounded-full py-2 px-4 mt-4 bg-blue-500 hover:bg-blue-700
+      text-white text-center font-bold text-lg sm:text-2xl
+  }
+
   .remove-bill-btn {
-    @apply rounded-full h-8 w-8 bg-red-400 text-white text-center font-bold
+    @apply rounded-full h-8 w-8 bg-red-600 text-white text-center font-bold
   }
 </style>

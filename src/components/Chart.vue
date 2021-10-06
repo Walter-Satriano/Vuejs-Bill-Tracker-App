@@ -76,7 +76,7 @@
           datasets: [
             {
               label: 'Amount',
-              backgroundColor: 'lightblue',
+              backgroundColor: 'lightgreen',
               data: processBills(this.bills),
             },
           ],

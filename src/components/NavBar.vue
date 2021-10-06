@@ -1,23 +1,22 @@
 <template>
-  <ul class="list-reset sm:flex sm:flex-wrap justify-center mb-8 sm:py-4 lg:mb-12">
+  <div class="font-sans text-center mb-12 sm:mb-24">
+    <ul class="list-reset sm:flex sm:flex-wrap justify-center sm:py-4">
+      <li
+        class="top_menu_items"
+        :class="[ activeCategory === '' ? 'bg-blue-700' : 'bg-blue-400' ]"
+        @click="clearActiveCategory()"
+      >All</li>
 
-    <li
-      class="top_menu_items"
-      :class="[ activeCategory === '' ? 'bg-gray-600' : 'bg-gray-200' ]"
-      @click="clearActiveCategory()"
-    >All</li>
-
-    <li
-      class="top_menu_items"
-      :class="[ activeCategory === category ? 'bg-gray-600' : 'bg-gray-200' ]"
-      v-for="category in categories"
-      :key="category"
-      @click="setActiveCategory(category)"
-    >{{ category }}</li>
-
-    <li class="top_menu_items bg-gray-200" @click="triggerShowAddCategory">+</li>
-
-  </ul>
+      <li
+        class="top_menu_items"
+        :class="[ activeCategory === category ? 'bg-blue-700' : 'bg-blue-400' ]"
+        v-for="category in categories"
+        :key="category"
+        @click="setActiveCategory(category)"
+      >{{ category }}</li>
+    </ul>
+    <button class="add-category-btn" @click="triggerShowAddCategory">Add New Category</button>
+  </div>
 </template>
 
 <script>
@@ -39,6 +38,12 @@ export default {
 
 <style lang="postcss" scoped>
 .top_menu_items {
-  @apply  p-2 hover:bg-gray-400 uppercase font-black cursor-pointer font-mono text-base sm:text-2xl lg:text-4xl;
+  @apply p-2 border-b-2 rounded-lg sm:border-0 sm:mx-2 sm:my-2
+    hover:bg-blue-500 uppercase font-bold cursor-pointer
+    text-lg text-white text-center sm:text-2xl lg:text-3xl;
+}
+.add-category-btn {
+  @apply rounded-full py-2 px-4 mt-4 bg-green-400 hover:bg-green-600
+    text-white text-center font-bold text-lg sm:text-2xl
 }
 </style>

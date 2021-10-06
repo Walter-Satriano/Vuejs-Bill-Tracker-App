@@ -10,9 +10,8 @@
           v-on:clearActiveCategory="clearActiveCategory"
           v-on:setActiveCategory="setActiveCategory"
           v-on:triggerShowAddCategory="triggerShowAddCategory"
-        
         />
-        <div class="lg:flex text-center">
+        <div class="lg:flex text-center items-center">
           <div class="lg:w-1/2">
             <BillsTable 
               :bills="activeBills"
