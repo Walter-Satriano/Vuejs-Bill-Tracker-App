@@ -14,7 +14,7 @@
           <td>{{ bill.amount }} €</td>
           <td>{{ bill.category }}</td>
           <td class="border-none" >
-            <button class="" @click="removeBill(index)">
+            <button @click="removeBill(index)">
               <font-awesome-icon icon="times" class="text-red-500 ml-1"/>
             </button>
           </td>
@@ -54,9 +54,5 @@
   .add-bill-btn {
     @apply rounded-full py-2 px-4 mt-4 bg-blue-500 hover:bg-blue-700
       text-white text-center font-bold text-lg sm:text-2xl
-  }
-
-  .remove-bill-btn {
-    @apply rounded-full h-8 w-8 bg-red-600 text-white text-center font-bold
   }
 </style>
