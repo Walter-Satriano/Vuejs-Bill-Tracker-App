@@ -14,8 +14,8 @@
           <td>{{ bill.amount }} €</td>
           <td>{{ bill.category }}</td>
           <td class="border-none" >
-            <button class="remove-bill-btn" @click="removeBill(index)">
-              <font-awesome-icon icon="trash"/>
+            <button class="" @click="removeBill(index)">
+              <font-awesome-icon icon="times" class="text-red-500 ml-1"/>
             </button>
           </td>
         </tr>
