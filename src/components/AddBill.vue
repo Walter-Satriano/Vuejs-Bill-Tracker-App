@@ -11,7 +11,7 @@
             v-model="date"
           ></datepicker>
 
-          <p class="text-left mb-1 mt-5">Select a date:</p>
+          <p class="text-left mb-1 mt-5">Select a category:</p>
           <select v-model="category" class="w-full shadow border-2 border-blue-500 rounded py-2 px-3">
             <option v-for="category in categories" :value="category" :key="category">{{ category }}</option>
           </select>
